@@ -1,11 +1,16 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { StarIcon } from 'react-native-heroicons/solid'
 import { LocationMarkerIcon } from 'react-native-heroicons/outline'
+import { useNavigation } from '@react-navigation/native'
 
 const FeaturesCard = () => {
+    const navigation = useNavigation();
+
     return (
-        <View className='mr-4 mt-4 bg-white rounded-lg'>
+        <TouchableOpacity className='mr-4 mt-4 bg-white rounded-lg' onPress={() => {
+            navigation.navigate("Restaurant");
+        }}>
             <Image source={{ uri: "https://links.papareact.com/gn7" }} className='h-36 w-48 rounded-sm' />
             <View className='p-2'>
                 <Text className='font-bold text-lg mb-1'>Nando's</Text>
@@ -20,7 +25,7 @@ const FeaturesCard = () => {
                     <Text className='text-gray-500 text-xs'>Clink Street</Text>
                 </View>
             </View>
-        </View >
+        </TouchableOpacity >
     )
 }
 
