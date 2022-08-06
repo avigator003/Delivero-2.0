@@ -1,9 +1,11 @@
 import { useNavigation } from '@react-navigation/native'
 import React, { useEffect, useLayoutEffect } from 'react'
-import { Text, View } from 'react-native'
+import { ScrollView, Text, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Header from './common/Header'
 import SearchbarHeader from './common/SearchbarHeader'
+import Categories from './components/Categories/Categories'
+import Features from './components/Features/Features'
 
 const HomeScreen = () => {
 
@@ -16,9 +18,17 @@ const HomeScreen = () => {
     }, [])
 
     return (
-        <SafeAreaView className='mx-4 my-4 px-2'>
+        <SafeAreaView className='my-4 px-4'>
             <Header />
             <SearchbarHeader />
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{
+                paddingBottom: 100
+            }}>
+                <Categories />
+                <Features />
+                <Features />
+                <Features />
+            </ScrollView>
         </SafeAreaView>
     )
 }
