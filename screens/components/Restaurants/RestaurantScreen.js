@@ -5,6 +5,7 @@ import { ArrowLeftIcon, LocationMarkerIcon } from 'react-native-heroicons/outlin
 import { StarIcon } from 'react-native-heroicons/solid';
 import RestaurantHeader from './RestaurantHeader';
 import MenuCard from './MenuCard';
+import BascetIcon from '../../common/BascetIcon';
 
 const RestaurantScreen = () => {
     const navigation = useNavigation();
@@ -17,9 +18,10 @@ const RestaurantScreen = () => {
 
     return (
         <>
+            <BascetIcon />
             <RestaurantHeader />
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{
-                paddingBottom: 3
+                paddingBottom: 100
             }} >
                 <Text className='font-bold text-lg px-4 py-2.5'>Menu</Text>
 

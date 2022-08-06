@@ -3,26 +3,29 @@ import React from 'react'
 import { StarIcon } from 'react-native-heroicons/solid'
 import { LocationMarkerIcon } from 'react-native-heroicons/outline'
 import { useNavigation } from '@react-navigation/native'
+import { urlFor } from '../../../sanity'
 
-const FeaturesCard = () => {
+const FeaturesCard = (props) => {
     const navigation = useNavigation();
+    const { title, description, image, address, rating } = props
+
 
     return (
         <TouchableOpacity className='mr-4 mt-4 bg-white rounded-lg' onPress={() => {
             navigation.navigate("Restaurant");
         }}>
-            <Image source={{ uri: "https://links.papareact.com/gn7" }} className='h-36 w-48 rounded-sm' />
+            <Image source={{ uri: image ? urlFor(image).url() : "https://links.papareact.com/gn7" }} className='object-fill h-36 w-52 rounded-sm ' />
             <View className='p-2'>
-                <Text className='font-bold text-lg mb-1'>Nando's</Text>
+                <Text className='font-bold text-lg mb-1'>{title}</Text>
+                <Text className='text-xs mb-2 text-gray-400'>{description}</Text>
                 <View className='flex-row space-x-1.5 mb-1'>
                     <StarIcon color={"#A2B8A1"} size={15} />
-                    <Text className='text-[#A2B8A1] text-xs'>4.2</Text>
+                    <Text className='text-[#A2B8A1] text-xs'>{rating}</Text>
                     <Text className='text-gray-500 text-xs'>offers</Text>
                 </View>
                 <View className='flex-row space-x-1.5 mb-1'>
                     <LocationMarkerIcon size={15} color={"gray"} />
-                    <Text className='text-gray-500 text-xs'>Nearby</Text>
-                    <Text className='text-gray-500 text-xs'>Clink Street</Text>
+                    <Text className='text-gray-500 text-xs'>{address}</Text>
                 </View>
             </View>
         </TouchableOpacity >
