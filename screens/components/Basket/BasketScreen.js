@@ -1,7 +1,7 @@
 import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native'
 import React, { useMemo, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { BaseRouter } from '@react-navigation/native'
+import { BaseRouter, useNavigation } from '@react-navigation/native'
 import BasketHeader from './BasketHeader'
 import BasketItem from './BasketItem'
 import { useSelector } from 'react-redux'
