@@ -11,7 +11,6 @@ const FeaturesCard = (props) => {
 
 
     const handleNavigation = () => {
-        console.log(id)
         navigation.navigate("Restaurant", { id, title, description, image, address, rating, dishes });
     }
     return (

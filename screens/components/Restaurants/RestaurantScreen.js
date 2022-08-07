@@ -6,17 +6,13 @@ import { StarIcon } from 'react-native-heroicons/solid';
 import RestaurantHeader from './RestaurantHeader';
 import MenuCard from './MenuCard';
 import BascetIcon from '../../common/BascetIcon';
+import { useDispatch } from 'react-redux';
 
 const RestaurantScreen = (props) => {
     const navigation = useNavigation();
+
     const { params: { id, title, description, image, address, rating, dishes } } = useRoute();
 
-
-    useEffect(() => {
-        navigation.setOptions({
-            headerShown: false
-        })
-    }, [])
 
     return (
         <>

@@ -17,7 +17,6 @@ const Categories = () => {
         }} className=''>
             {
                 categories.map(category => (
-                    console.log(category),
                     <CategoriesCard
                         key={category._id}
                         title={category.title}

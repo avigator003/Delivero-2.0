@@ -1,13 +1,35 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MinusCircleIcon, PlusCircleIcon } from 'react-native-heroicons/solid';
 import { urlFor } from '../../../sanity';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeFromBasket, selectBasketItems, selectBasketItemsWithId } from '../../../features/basketSlice';
+import { useNavigation } from '@react-navigation/native';
+import { addToBasket } from '../../../features/basketSlice'
 
 const MenuCard = (props) => {
+    const { id, title, description, image, price } = props
 
+    const dispatch = useDispatch();
+    const items = useSelector((state) => selectBasketItemsWithId(state, id));
+    const navigation = useNavigation()
     const [isPressed, setIsPressed] = useState(false);
 
-    const { id, title, description, image, price } = props
+
+    useEffect(() => {
+        navigation.setOptions({
+            headerShown: false
+        })
+    }, [])
+
+    const addItemToBasket = () => {
+        dispatch(addToBasket({ id, title, description, image, price }))
+    }
+
+    const removeItemFromBasket = () => {
+        if (!items.length > 0) return;
+        dispatch(removeFromBasket({ id }))
+    }
 
 
     return (
@@ -28,11 +50,11 @@ const MenuCard = (props) => {
 
             {isPressed &&
                 <View className='items-center flex-row space-x-2 py-3'>
-                    <TouchableOpacity>
-                        <MinusCircleIcon size={40} color={"#00CCBB"} />
+                    <TouchableOpacity onPress={removeItemFromBasket} disabled={!items.length} >
+                        <MinusCircleIcon size={40} color={items.length > 0 ? "#00CCBB" : "gray"} />
                     </TouchableOpacity>
-                    <Text>0</Text>
-                    <TouchableOpacity>
+                    <Text>{items.length}</Text>
+                    <TouchableOpacity onPress={addItemToBasket}>
                         <PlusCircleIcon size={40} color={"#00CCBB"} />
                     </TouchableOpacity>
                 </View>
