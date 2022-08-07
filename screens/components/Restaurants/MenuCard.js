@@ -1,10 +1,13 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { MinusCircleIcon, PlusCircleIcon } from 'react-native-heroicons/solid';
+import { urlFor } from '../../../sanity';
 
-const MenuCard = () => {
+const MenuCard = (props) => {
 
     const [isPressed, setIsPressed] = useState(false);
+
+    const { id, title, description, image, price } = props
 
 
     return (
@@ -13,13 +16,13 @@ const MenuCard = () => {
                 setIsPressed(!isPressed)
             }}>
                 <View className='flex-1 pr-2'>
-                    <Text className='text-lg font-semibold '>PERI-PERI Nuts</Text>
-                    <Text className='text-sm text-gray-400 mt-2'>Chrunchy, almonds ,cashewand and macadamia nuts in a fiery PERI-PERI seasaoning. Server 2-3.</Text>
-                    <Text className='text-sm text-gray-400 mt-2'>$ 2.75</Text>
+                    <Text className='text-lg font-semibold '>{title}</Text>
+                    <Text className='text-sm text-gray-400 mt-2'>{description}</Text>
+                    <Text className='text-sm text-gray-400 mt-2'>$ {price}</Text>
                 </View>
 
                 <View>
-                    <Image source={{ uri: "https://links.papareact.com/gn7" }} className='h-20 w-20 rounded p-4' />
+                    <Image source={{ uri: image ? urlFor(image).url() : "https://links.papareact.com/gn7" }} className='h-20 w-20 rounded p-4' />
                 </View>
             </TouchableOpacity>
 

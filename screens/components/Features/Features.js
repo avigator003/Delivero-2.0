@@ -41,9 +41,11 @@ const Features = (props) => {
                 {restaurants?.map(restaurant => (
                     <FeaturesCard
                         key={restaurant._id}
+                        id={restaurant._id}
                         title={restaurant.name}
                         description={restaurant.short_description}
                         image={restaurant.image}
+                        dishes={restaurant.dishes}
                         address={restaurant.address}
                         rating={restaurant.rating}
                     />

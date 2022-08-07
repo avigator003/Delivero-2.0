@@ -30,7 +30,6 @@ const HomeScreen = () => {
             }
         }
         `).then((data) => {
-
             setFeaturedCategories(data)
         })
     }, [])

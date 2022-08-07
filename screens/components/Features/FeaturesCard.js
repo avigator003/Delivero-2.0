@@ -7,13 +7,15 @@ import { urlFor } from '../../../sanity'
 
 const FeaturesCard = (props) => {
     const navigation = useNavigation();
-    const { title, description, image, address, rating } = props
+    const { id, title, description, image, address, rating, dishes } = props
 
 
+    const handleNavigation = () => {
+        console.log(id)
+        navigation.navigate("Restaurant", { id, title, description, image, address, rating, dishes });
+    }
     return (
-        <TouchableOpacity className='mr-4 mt-4 bg-white rounded-lg' onPress={() => {
-            navigation.navigate("Restaurant");
-        }}>
+        <TouchableOpacity className='mr-4 mt-4 bg-white rounded-lg' onPress={() => handleNavigation()}>
             <Image source={{ uri: image ? urlFor(image).url() : "https://links.papareact.com/gn7" }} className='object-fill h-36 w-52 rounded-sm ' />
             <View className='p-2'>
                 <Text className='font-bold text-lg mb-1'>{title}</Text>

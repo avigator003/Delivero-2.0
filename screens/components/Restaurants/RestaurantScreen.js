@@ -1,14 +1,16 @@
 import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native'
 import React, { useEffect } from 'react'
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { ArrowLeftIcon, LocationMarkerIcon } from 'react-native-heroicons/outline';
 import { StarIcon } from 'react-native-heroicons/solid';
 import RestaurantHeader from './RestaurantHeader';
 import MenuCard from './MenuCard';
 import BascetIcon from '../../common/BascetIcon';
 
-const RestaurantScreen = () => {
+const RestaurantScreen = (props) => {
     const navigation = useNavigation();
+    const { params: { id, title, description, image, address, rating, dishes } } = useRoute();
+
 
     useEffect(() => {
         navigation.setOptions({
@@ -19,7 +21,13 @@ const RestaurantScreen = () => {
     return (
         <>
             <BascetIcon />
-            <RestaurantHeader />
+            <RestaurantHeader
+                image={image}
+                title={title}
+                rating={rating}
+                address={address}
+                description={description}
+            />
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{
                 paddingBottom: 100
             }} >
@@ -27,12 +35,17 @@ const RestaurantScreen = () => {
 
                 <View
                     className='p-4 bg-white'>
-                    <MenuCard />
-                    <MenuCard />
-                    <MenuCard />
-                    <MenuCard />
-                    <MenuCard />
-                    <MenuCard />
+                    {
+                        dishes.map(dish => (
+                            <MenuCard
+                                key={dish._id}
+                                id={dish._id}
+                                title={dish.name}
+                                image={dish.image}
+                                price={dish.price}
+                                description={dish.short_description}
+                            />
+                        ))}
                 </View>
             </ScrollView>
         </>
