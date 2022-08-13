@@ -2,7 +2,7 @@ import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { urlFor } from '../../../sanity'
 import { useDispatch, useSelector } from 'react-redux'
-import { removeFromBasket, selectBasketItemsWithId } from '../../../features/basketSlice'
+import { removeFromBasket, selectBasketItemsWithId } from '../../../redux/basketSlice'
 
 const BasketItem = (props) => {
     const { id, itemsCount, name, image, price } = props

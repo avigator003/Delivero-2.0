@@ -5,7 +5,7 @@ import { BaseRouter, useNavigation } from '@react-navigation/native'
 import BasketHeader from './BasketHeader'
 import BasketItem from './BasketItem'
 import { useSelector } from 'react-redux'
-import { selectBasketItems } from '../../../features/basketSlice'
+import { selectBasketItems } from '../../../redux/basketSlice'
 import BasketFooter from './BasketFooter'
 
 const BasketScreen = () => {

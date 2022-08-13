@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { selectBasketTotal } from '../../../features/basketSlice'
+import { selectBasketTotal } from '../../../redux/basketSlice'
 import { useNavigation } from '@react-navigation/native'
 
 const BasketFooter = () => {

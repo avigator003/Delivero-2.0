@@ -1,8 +1,10 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { ArrowDownIcon, ChevronDownIcon, UserIcon } from 'react-native-heroicons/outline'
+import { useNavigation } from '@react-navigation/native'
 
 const Header = () => {
+    const navigation = useNavigation();
     return (
         <View className='flex-row space-x-3 items-center'>
             <Image source={{ uri: "https://links.papareact.com/wru" }} className='h-7 w-7 rounded-full bg-gray-300 p-4' />
@@ -14,7 +16,9 @@ const Header = () => {
                 </View>
 
             </View>
-            <UserIcon size={30} color={"#7AC0B6"} />
+            <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+                <UserIcon size={30} color={"#7AC0B6"} />
+            </TouchableOpacity>
         </View>
     )
 }

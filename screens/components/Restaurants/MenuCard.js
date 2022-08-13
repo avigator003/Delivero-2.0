@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react'
 import { MinusCircleIcon, PlusCircleIcon } from 'react-native-heroicons/solid';
 import { urlFor } from '../../../sanity';
 import { useDispatch, useSelector } from 'react-redux';
-import { removeFromBasket, selectBasketItems, selectBasketItemsWithId } from '../../../features/basketSlice';
+import { removeFromBasket, selectBasketItems, selectBasketItemsWithId } from '../../../redux/basketSlice';
 import { useNavigation } from '@react-navigation/native';
-import { addToBasket } from '../../../features/basketSlice'
+import { addToBasket } from '../../../redux/basketSlice'
 
 const MenuCard = (props) => {
     const { id, title, description, image, price } = props
