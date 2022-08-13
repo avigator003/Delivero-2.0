@@ -1,13 +1,15 @@
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
 import React from 'react'
-import ProfileCard from './ProfileCard'
-import OptionsCard from './OptionsCard'
-import ProfileOptionsCard from './ProfileOptionsCard'
+
 import { AnnotationIcon, BellIcon, CogIcon, ColorSwatchIcon, CreditCardIcon, HeartIcon, IdentificationIcon, InformationCircleIcon, LogoutIcon, MapIcon, PencilAltIcon, SpeakerphoneIcon, StarIcon } from 'react-native-heroicons/outline'
 import { ArrowLeftIcon } from 'react-native-heroicons/solid'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import ProfileOptionsContainerCard from './ProfileOptionsContainerCard'
+
 import { useNavigation } from '@react-navigation/native'
+import ProfileCard from './components/ProfileCard'
+import ProfileOptionsCard from './components/ProfileOptionsCard'
+import ProfileOptionsContainerCard from './components/ProfileOptionsContainerCard'
+import OptionsCard from './components/OptionsCard'
 
 const Profile = () => {
     const navigation = useNavigation();

@@ -3,10 +3,14 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Avatar } from 'react-native-elements'
 import { ChevronRightIcon } from 'react-native-heroicons/solid'
+import { useNavigation } from '@react-navigation/native'
 
 const ProfileCard = () => {
+    const navigation = useNavigation();
+
     return (
-        <View className='bg-white justify-between flex-row p-5 items-center mt-4 rounded-xl'>
+        <TouchableOpacity className='bg-white justify-between flex-row p-5 items-center mt-4 rounded-xl'
+            onPress={() => navigation.navigate("EditProfile")}>
             <View className='space-y-6'>
                 <Text className='font-bold text-xl'>Akshat</Text>
                 <TouchableOpacity className='flex-row items-center space-x-1'>
@@ -26,7 +30,7 @@ const ProfileCard = () => {
                 >
                 </Avatar>
             </TouchableOpacity>
-        </View>
+        </TouchableOpacity>
     )
 }
 
