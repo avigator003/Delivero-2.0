@@ -1,1 +1,10 @@
-
+![Login](https://user-images.githubusercontent.com/53995398/184555983-9d2f317d-a976-45f6-be56-08acebd0c283.jpeg)
+![signup](https://user-images.githubusercontent.com/53995398/184555984-467f0217-0313-42ea-ad6f-fcc3db80fcc6.jpeg)
+![otp](https://user-images.githubusercontent.com/53995398/184555985-5e4a469d-7e50-4d6c-9b17-9fe1975e5653.jpeg)
+![Home](https://user-images.githubusercontent.com/53995398/184555989-db64b919-2659-4710-b218-667c0a7169f6.jpeg)
+![profile](https://user-images.githubusercontent.com/53995398/184555990-6ba2ef60-773d-49d1-a2fe-aa255c127bc2.jpeg)
+![editprofile](https://user-images.githubusercontent.com/53995398/184555994-b5a0f1fd-8c22-4d02-9ae8-b463b429a04c.jpeg)
+![restaurant](https://user-images.githubusercontent.com/53995398/184555995-474c6ee8-caca-46f8-9d2e-fbc0f349aa78.jpeg)
+![basket](https://user-images.githubusercontent.com/53995398/184555999-d4fb9d80-1b47-4a9c-adde-f5932c48d616.jpeg)
+![delivery](https://user-images.githubusercontent.com/53995398/184556001-3470a221-c255-4f72-8d36-5f9491ed75a5.jpeg)
+![deliverystatus](https://user-images.githubusercontent.com/53995398/184556003-35a45bba-df5b-424e-8bb4-23cb41603a66.jpeg)
