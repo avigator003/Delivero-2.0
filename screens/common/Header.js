@@ -7,7 +7,7 @@ const Header = () => {
     const navigation = useNavigation();
     return (
         <View className='flex-row space-x-3 items-center'>
-            <TouchableOpacity onPress={() => navigation.navigate("SignIn")}>
+            <TouchableOpacity onPress={() => navigation.navigate("Otp")}>
                 <Image source={{ uri: "https://links.papareact.com/wru" }} className='h-7 w-7 rounded-full bg-gray-300 p-4' />
             </TouchableOpacity>
             <View className='flex-1'>
