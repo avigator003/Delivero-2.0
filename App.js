@@ -10,6 +10,8 @@ import PreparingOrderScreen from './screens/components/PreparingOrderScreen/Prep
 import Delivery from './screens/components/Delivery/Delivery';
 import Profile from './screens/components/Profile/Profile'
 import EditProfile from './screens/components/Profile/EditProfile';
+import SignUp from './screens/components/Authentication/SignUp';
+import SignIn from './screens/components/Authentication/SignIn';
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -28,7 +30,8 @@ export default function App() {
             <Stack.Screen name="Delivery" component={Delivery} options={{ headerShown: false }} />
             <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false, animation: 'slide_from_right' }} />
             <Stack.Screen name="EditProfile" component={EditProfile} options={{ headerShown: false, animation: 'slide_from_bottom' }} />
-
+            <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }} />
+            <Stack.Screen name="SignIn" component={SignIn} options={{ headerShown: false }} />
           </Stack.Navigator>
         </TailwindProvider>
       </Provider>
